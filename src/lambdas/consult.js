@@ -14,7 +14,7 @@ const sendEmail = async ({ body:corpo }) => {
     }
     const config = {
         method:'GET',
-        url: 'https://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx',
+        url: 'http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx',
         params: {
             nCdEmpresa: ' ',
             sDsSenha: ' ',
