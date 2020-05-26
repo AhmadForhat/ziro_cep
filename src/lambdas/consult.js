@@ -51,7 +51,7 @@ const sendEmail = async ({ body:corpo }) => {
         console.log(error)
         return {
             statusCode: 500,
-            body: JSON.stringify('Erro no envio para o email')
+            body: JSON.stringify('Erro ao consultar a API dos correios')
         }
     }
 }
