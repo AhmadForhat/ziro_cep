@@ -42,10 +42,9 @@ const sendEmail = async ({ body:corpo }) => {
         const result = await axios(config)
         const convertido = convert.xml2json(result.data, { compact: true, spaces: 4 })
         const obj = JSON.parse(convertido)
-        console.log(obj)
         return {
             statusCode: 200,
-            body: JSON.stringify(obj.Servicos)
+            body: JSON.stringify(obj)
         }
     } catch (error) {
         console.log(error)
