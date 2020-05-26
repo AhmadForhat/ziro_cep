@@ -13,7 +13,7 @@ const sendEmail = async ({ body:corpo }) => {
         if(servico === 'sedexHOJE') return '04804'
     }
     const config = {
-        method:'GET',
+        method:'POST',
         url: 'http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx',
         params: {
             nCdEmpresa: ' ',
@@ -34,7 +34,7 @@ const sendEmail = async ({ body:corpo }) => {
             nIndicaCalculo:'3'
         },
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/x-www-form-urlencoded',
             'Accept': 'application/json'
         },
     }
