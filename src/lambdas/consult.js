@@ -4,7 +4,7 @@ const convert = require('xml-js')
 require('dotenv').config()
 
 const sendEmail = async ({ body:corpo }) => {
-    const {cep, peso, comprimento, altura, largura, valor, servico, seguro} = corpo
+    const {cep, peso, comprimento, altura, largura, valor, servico} = corpo
     const numberServico = (servico) => {
         if(servico === 'sedex') return '04014'
         if(servico === 'pac') return '04510'
@@ -28,7 +28,7 @@ const sendEmail = async ({ body:corpo }) => {
             nVlLargura: largura,
             nVlDiametro: '0',
             sCdMaoPropria: 'n',
-            nVlValorDeclarado: seguro ? valor : 0,
+            nVlValorDeclarado: valor,
             sCdAvisoRecebimento: 'n',
             StrRetorno:'xml',
             nIndicaCalculo:'3'
